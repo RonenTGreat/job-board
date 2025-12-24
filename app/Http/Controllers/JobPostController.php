@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\JobPost;
 use Illuminate\Http\Request;
 
-class JobController extends Controller
+class JobPostController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('job.index', ['jobs' => JobPost::all()]);
     }
 
     /**
