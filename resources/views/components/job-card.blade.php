@@ -4,7 +4,7 @@
             <div class="text-slate-500"> GHS {{ number_format($job->salary) }}</div>
         </div>
 
-        <div class="mb-4 flex items-center justify-between text-sm text-slate-500 items-center">
+        <div class="mb-4 flex items-center justify-between text-sm text-slate-500">
             <div class="flex space-x-4">
                 <div>Company Name</div>
                 <div>{{ $job->location }}</div>
@@ -16,8 +16,5 @@
                 <x-tag>{{ $job->category }}</x-tag>
             </div>
         </div>
-
-        <p class="text-sm text-slate-500 mb-4">{!! nl2br(e($job->description)) !!}</p>
-
         {{ $slot }}
     </x-card>
