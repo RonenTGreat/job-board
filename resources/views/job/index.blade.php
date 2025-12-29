@@ -18,8 +18,17 @@
                         <x-text-input name="max_salary" value="{{ request('max_salary') }}" placeholder="To" />
                     </div>
                 </div>
-                <div>1</div>
-                <div>1</div>
+                <div>
+                    <div class="mb-1 font-semibold">Experience</div>
+
+                    <x-radio-group name="experience" :options="\App\Models\JobPost::$experience" />
+
+                </div>
+                <div>
+                    <div class="mb-1 font-semibold">Category</div>
+
+                    <x-radio-group name="category" :options="\App\Models\JobPost::$category" />
+                </div>
             </div>
 
             <button class="w-full cursor-pointer">Filter</button>
