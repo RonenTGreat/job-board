@@ -25,6 +25,10 @@ class JobPost extends Model
         return $this->belongsTo(Employer::class);
     }
 
+    public function jobApplications(){
+        return $this->hasMany(JobApplication::class);
+    }
+
     public function scopeFilter(Builder | QueryBuilder $query, array $filters){
         return $query->when($filters['search'] ?? null, function ($query, $search) {
             $query->where(function ($query) use($search) {
