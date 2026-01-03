@@ -20,14 +20,17 @@ class JobApplicationController extends Controller
      */
     public function create(JobPost $job)
     {
+        $this->authorize('apply', $job);
         return view('job_application.create', ['job' => $job]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(JobPost $job,Request $request)
+    public function store(JobPost $job, Request $request)
     {
+        $this->authorize('apply', $job);
+
         $job->jobApplications()->create([
             'user_id' => $request->user()->id,
             ...$request->validate([
