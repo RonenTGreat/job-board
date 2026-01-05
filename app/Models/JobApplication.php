@@ -10,10 +10,10 @@ class JobApplication extends Model
     /** @use HasFactory<\Database\Factories\JobApplicationFactory> */
     use HasFactory;
 
-    protected $fillable = ['expected_salary', 'user_id', 'job_post_id'];
+    protected $fillable = ['expected_salary', 'user_id', 'job_post_id', 'cv_path'];
 
     public function job(){
-        return $this->belongsTo(JobPost::class);
+        return $this->belongsTo(JobPost::class, 'job_post_id');
     }
 
     public function user(){
