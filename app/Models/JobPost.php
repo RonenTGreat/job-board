@@ -9,11 +9,21 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use App\Models\User;
 use Illuminate\Contracts\Auth\Authenticatable as AuthAuthenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class JobPost extends Model
 {
     /** @use HasFactory<\Database\Factories\JobFactory> */
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+        'title',
+        'location',
+        'salary',
+        'description',
+        'experience',
+        'category'
+    ];
 
     public static array $experience = ['entry', 'intermediate', 'senior'];
     public static array $category = [

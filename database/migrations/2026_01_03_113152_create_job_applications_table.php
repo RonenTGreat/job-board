@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->foreignIdFor(User::class)->constrained();
-            $table->foreignIdFor(JobPost::class)->constrained;
+            $table->foreignIdFor(JobPost::class)->constrained();
             $table->unsignedInteger('expected_salary');
 
             $table->timestamps();
